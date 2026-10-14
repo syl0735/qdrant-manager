@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    font-family: 'Inter', sans-serif;
+  }
+
+  body {
+    @apply bg-default-50 text-foreground;
+    background-image:
+      radial-gradient(circle at top left, rgba(14, 165, 233, 0.05), transparent 24rem),
+      radial-gradient(circle at top right, rgba(245, 158, 11, 0.05), transparent 22rem),
+      linear-gradient(180deg, #e6ebf2 0%, #dce3ec 100%);
+    background-attachment: fixed;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  .surface-card {
+    @apply border border-default-300/80 bg-white shadow-lg shadow-default-300/35 backdrop-blur-md;
+  }
+
+  .surface-panel {
+    @apply border border-default-300/80 bg-default-200/70 shadow-inner shadow-default-400/20 backdrop-blur-md;
+  }
+
+  .panel-title {
+    @apply text-sm font-semibold tracking-tight text-foreground;
+  }
+
+  .panel-subtitle {
+    @apply text-xs text-default-400;
+  }
+}
+
+/* Drag and drop */
+.shard-card-dragging {
+  opacity: 0.4;
+  transform: scale(0.97);
+}
+
+.lane-drag-over {
+  @apply ring-2 ring-warning/60 bg-warning/5;
+}
+
+/* Transfer progress bar animation */
+@keyframes transferPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+.transfer-pulse {
+  animation: transferPulse 1.4s ease-in-out infinite;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { @apply bg-default-300 rounded; }
+::-webkit-scrollbar-thumb:hover { @apply bg-default-400; }
