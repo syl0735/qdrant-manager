@@ -25,11 +25,11 @@
 
 ### 集群概览
 
-![脱敏后的集群概览](docs/screenshots/cluster-overview.png)
+![脱敏后的集群概览](docs/screenshots/cluster-overview.jpg)
 
 ### 可视化 Shard 调度
 
-![脱敏后的 Shard 分布与调度界面](docs/screenshots/shard-distribution.png)
+![脱敏后的 Shard 分布与调度界面](docs/screenshots/shard-distribution.jpg)
 
 ## 使用前提
 
