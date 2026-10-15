@@ -5,6 +5,12 @@
 > [!WARNING]
 > 此工具可以创建和删除 collection、删除快照、迁移或删除 shard，并允许执行自定义 REST 请求。请只连接到受信任的 Qdrant 实例；生产环境必须使用 HTTPS、最小权限 API Key 和私有网络访问。不要将 Qdrant 的管理端口直接暴露到公网。
 
+## 为什么需要它
+
+自托管 Qdrant 集群扩容后，已有 shard 不会自动迁移到新加入的空闲节点，需要由运维人员手动均衡。本项目将这条运维路径变成直观、可确认的操作：查看各节点的 shard 与 points 分布，将 shard 卡片拖到目标节点，选择迁移或复制方式，并在界面中跟踪传输进度与 ETA。
+
+这一行为与 Qdrant Cloud 的自动再均衡能力不同；具体的自托管分片迁移机制请参阅 [Qdrant Distributed Deployment 文档](https://qdrant.tech/documentation/distributed_deployment/)。
+
 ## 功能
 
 - 集群节点总览与 Raft 状态
@@ -14,6 +20,16 @@
 - Collection 快照创建、下载和删除
 - REST Console（内置常用请求片段，`⌘ + Enter` 执行）
 - 节点快速切换、深浅色模式
+
+## 截图
+
+### 集群概览
+
+![脱敏后的集群概览](docs/screenshots/cluster-overview.png)
+
+### 可视化 Shard 调度
+
+![脱敏后的 Shard 分布与调度界面](docs/screenshots/shard-distribution.png)
 
 ## 使用前提
 
